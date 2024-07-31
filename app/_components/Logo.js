@@ -13,7 +13,9 @@ function Logo() {
         alt='La Vigie logo'
         className='rounded-full'
       /> */}
-      <span className='text-xl font-semibold text-primary-100'>La Vigie</span>
+      <span className='text-xl font-semibold text-primary-100 hover:text-white '>
+        La Vigie
+      </span>
     </Link>
   );
 }

@@ -16,12 +16,12 @@ export default function Home() {
       />
 
       <div className='relative z-10 '>
-        <h1 className='text-8xl text-primary-50 mb-10 tracking-tight font-normal'>
+        <h1 className='text-6xl lg:text-8xl mb-14 tracking-tight font-normal'>
           Bienvenue à la Vigie.
         </h1>
         <Link
           href='/cabins'
-          className='bg-accent-500 rounded-sm px-8 py-6 text-primary-800 text-lg font-semibold hover:bg-accent-600 transition-all'
+          className='bg-accent-400 rounded-md px-8 py-6 text-primary-900 text-lg font-semibold hover:bg-accent-300 transition-all '
         >
           Explorez nos chambres d'hôtes
         </Link>

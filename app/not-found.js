@@ -6,7 +6,7 @@ function NotFound() {
       <h1 className='text-3xl font-semibold'>Cette page n'existe pas :(</h1>
       <Link
         href='/'
-        className='inline-block rounded-sm bg-accent-500 text-primary-800 px-6 py-3 text-lg  hover:bg-accent-600 transition-all'
+        className='inline-block rounded-sm bg-accent-400 text-primary-900 px-6 py-3 text-lg hover:bg-accent-300 transition-all'
       >
         Retour à l'accueil
       </Link>

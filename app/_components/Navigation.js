@@ -1,33 +1,68 @@
+'use client';
+
+import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
+import { useState } from 'react';
 
 export default function Navigation() {
+  const [openMobileNav, setOpenMobileNav] = useState(false);
+  const toggleMobileNav = () => {
+    setOpenMobileNav(!openMobileNav);
+  };
+  const navlinks = [
+    { title: 'A propos', href: '/about' },
+    { title: 'Nos Chambres', href: '/rooms' },
+    { title: 'Espace invités', href: '/account' },
+  ];
+
   return (
-    <nav className='z-10 text-xl'>
-      <ul className='flex gap-16 items-center'>
-        <li>
-          <Link
-            href='/cabins'
-            className='hover:text-primary-900 transition-colors'
-          >
-            A propos
-          </Link>
-        </li>
-        <li>
-          <Link
-            href='/about'
-            className='hover:text-primary-900 transition-colors'
-          >
-            Nos chambres
-          </Link>
-        </li>
-        <li>
-          <Link
-            href='/account'
-            className='hover:text-primary-900 transition-colors'
-          >
-            Espace invités
-          </Link>
-        </li>
+    <nav className='z-30 text-xl flex items-center'>
+      {/* Desktop menu --justified-right */}
+      <ul className='hidden sm:flex sm:gap-16 sm:items-center'>
+        {navlinks.map((navlink, index) => (
+          <li key={index}>
+            <Link href={`${navlink.href}`} className='group transition-colors'>
+              {navlink.title}
+              <span class='block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary-50'></span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+      {/*  {/* HAMBURGER MENU or X --justified-right */}
+      <button className='sm:hidden duration-300' onClick={toggleMobileNav}>
+        {openMobileNav ? (
+          <>
+            <X size={24} aria-hidden='true' className='' />
+            <span className='sr-only'>Close mobile menu</span>
+          </>
+        ) : (
+          <>
+            {' '}
+            <Menu size={24} aria-hidden='true' />
+            <span className='sr-only'>Mobile menu</span>
+          </>
+        )}
+      </button>
+      {/* MOBILE NAV */}
+      <ul
+        className={
+          openMobileNav // slides from the left
+            ? `mobile-nav w-[70%] left-0`
+            : `mobile-nav w-[70%] left-[-80rem]`
+        }
+      >
+        {navlinks.map((navlink, index) => (
+          <li key={index} className='m-4'>
+            <Link
+              onClick={toggleMobileNav}
+              href={`${navlink.href}`}
+              className='group text-2xl text-primary-900 font-bold '
+            >
+              {navlink.title}
+              <span class='block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary-900'></span>
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );

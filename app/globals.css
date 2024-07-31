@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.mobile-nav {
+  @apply absolute top-0 h-screen bg-accent-400 opacity-80 flex flex-col justify-center items-center duration-1000;
+}

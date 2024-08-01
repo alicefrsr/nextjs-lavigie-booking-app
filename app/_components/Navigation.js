@@ -11,8 +11,8 @@ export default function Navigation() {
   };
   const navlinks = [
     { title: 'A propos', href: '/about' },
-    { title: 'Nos Chambres', href: '/rooms' },
-    { title: 'Espace invités', href: '/account' },
+    { title: 'Nos chambres', href: '/rooms' },
+    { title: 'Votre compte', href: '/account' },
   ];
 
   return (
@@ -23,7 +23,7 @@ export default function Navigation() {
           <li key={index}>
             <Link href={`${navlink.href}`} className='group transition-colors'>
               {navlink.title}
-              <span class='block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary-50'></span>
+              <span className='block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary-50'></span>
             </Link>
           </li>
         ))}
@@ -59,7 +59,7 @@ export default function Navigation() {
               className='group text-2xl text-primary-900 font-bold '
             >
               {navlink.title}
-              <span class='block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary-900'></span>
+              <span className='block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary-900'></span>
             </Link>
           </li>
         ))}

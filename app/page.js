@@ -20,10 +20,10 @@ export default function Home() {
           Bienvenue à la Vigie.
         </h1>
         <Link
-          href='/cabins'
-          className='bg-accent-400 rounded-md px-8 py-6 text-primary-900 text-lg font-semibold hover:bg-accent-300 transition-all '
+          href='/rooms'
+          className='bg-accent-400 hover:bg-accent-300  rounded-md px-8 py-6 text-primary-900 text-lg font-semibold transition-all'
         >
-          Explorez nos chambres d'hôtes
+          Explorez nos chambres d&#39;hôtes
         </Link>
       </div>
     </main>

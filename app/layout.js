@@ -2,7 +2,7 @@ import { Josefin_Sans } from 'next/font/google';
 
 // import { ReservationProvider } from '@/app/_components/ReservationContext';
 
-import '@/app/globals.css';
+import '@/app/_styles/globals.css';
 import Logo from './_components/Logo';
 import Navigation from './_components/Navigation';
 import Header from './_components/Header';
@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang='fr'>
       <body
-        className={`${josefin.className} overflow-x-hidden bg-primary-950 text-primary-50 flex flex-col`}
+        className={`${josefin.className} overflow-x-hidden bg-primary-950 text-primary-100 flex flex-col`}
       >
         <Header />
 

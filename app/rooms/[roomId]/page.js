@@ -1,5 +1,5 @@
 import Room from '@/app/_components/Room';
-// import Reservation from '@/app/_components/Reservation';
+import Reservation from '@/app/_components/Reservation';
 import Spinner from '@/app/_components/Spinner';
 import { Suspense } from 'react';
 
@@ -10,7 +10,6 @@ import { getCabin, getCabins } from '@/app/_lib/data-service';
 // };
 // dynamic instead
 export async function generateMetadata({ params }) {
-  console.log(params);
   const { name } = await getCabin(params.roomId);
 
   return { title: `${name}` };
@@ -23,9 +22,9 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({ params }) {
-  // fetching multiple pieces of data from one component: blocking waterfall
+  // fetching multiple pieces of data that don't depend on one another, from one component: blocking waterfall
+  // (use const [x, x, x] = await Promise.all([x, x, x]))
   const room = await getCabin(params.roomId);
-  console.log(params);
   // const settings = await getSettings();
   // const bookedDates = await getBookedDatesByCabinId(params.roomId);
 
@@ -37,15 +36,17 @@ export default async function Page({ params }) {
       <Room room={room} />
 
       <div>
-        <h4 className='text-3xl font-semibold text-center mb-10 text-primary-600 '>
-          Réservez {room.name} aujourd&#39;hui.
-        </h4>
+        <h2 className='text-3xl font-semibold text-center mb-10 text-primary-600'>
+          Réservez <span className='text-accent-100'>{room.name} </span>
+          aujourd&#39;hui.
+        </h2>
         {/* <div className='grid grid-cols-2 border border-primary-800 min-h-[400px]'>
           <DateSelector />
           <ReservationForm />
         </div> */}
+
         <Suspense fallback={<Spinner />}>
-          {/* <Reservation room={room} /> */}
+          <Reservation room={room} />
         </Suspense>
       </div>
     </div>

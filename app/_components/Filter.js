@@ -17,7 +17,7 @@ export default function Filter() {
     router.push(`?capacity=${filter}`); // put this in url?
   }
   return (
-    <div className='flex border border-primary-700'>
+    <div className='flex border border-primary-700 rounded-md'>
       <Button
         filter='all'
         handleFilter={handleFilter}

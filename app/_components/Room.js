@@ -11,9 +11,9 @@ export default function Room({ room }) {
       </div>
 
       <div>
-        <h3 className='text-accent-100 font-black text-7xl mb-5 translate-x-[-254px] bg-primary-950 p-6 pb-1 w-[150%]'>
+        <h1 className='text-accent-100 font-black text-7xl mb-5 translate-x-[-254px] bg-primary-950 p-6 pb-1 w-[150%]'>
           {name}
-        </h3>
+        </h1>
 
         <p className='text-lg mb-10 text-accent-50'>{description}</p>
 

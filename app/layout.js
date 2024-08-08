@@ -1,6 +1,6 @@
 import { Josefin_Sans } from 'next/font/google';
 
-import { ReservationProvider } from '@/app/_components/ReservationContext';
+import { ReservationProvider } from '@/app/_components/rooms/ReservationContext';
 
 import '@/app/_styles/globals.css';
 import Logo from './_components/Logo';

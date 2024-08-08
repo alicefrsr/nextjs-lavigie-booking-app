@@ -1,5 +1,5 @@
-import Room from '@/app/_components/Room';
-import Reservation from '@/app/_components/Reservation';
+import Room from '@/app/_components/rooms/Room';
+import Reservation from '@/app/_components/rooms/Reservation';
 import Spinner from '@/app/_components/Spinner';
 import { Suspense } from 'react';
 

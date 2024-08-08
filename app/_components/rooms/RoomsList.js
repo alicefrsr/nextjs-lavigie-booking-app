@@ -1,5 +1,5 @@
-import { getCabins } from '../_lib/data-service';
-import RoomCard from '@/app/_components/RoomCard';
+import { getCabins } from '../../_lib/data-service';
+import RoomCard from '@/app/_components/rooms/RoomCard';
 
 export default async function RoomsList({ filter }) {
   const rooms = await getCabins();

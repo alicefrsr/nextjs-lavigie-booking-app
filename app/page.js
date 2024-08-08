@@ -21,7 +21,7 @@ export default function Home() {
         </h1>
         <Link
           href='/rooms'
-          className='bg-accent-400 hover:bg-accent-300  rounded-md px-8 py-6 text-primary-900 text-lg font-semibold transition-all'
+          className='bg-accent-400 hover:bg-accent-300 rounded-md px-8 py-6 text-primary-900 text-lg font-semibold transition-all'
         >
           Explorez nos chambres d&#39;hôtes
         </Link>

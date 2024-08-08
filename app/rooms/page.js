@@ -2,10 +2,10 @@
 // import CabinCard from '@/app/_components/CabinCard';
 
 import { Suspense } from 'react';
-import RoomsList from '../_components/RoomsList';
+import RoomsList from '../_components/rooms/RoomsList';
 import Spinner from '../_components/Spinner';
-import Filter from '../_components/Filter';
-import ReservationReminder from '../_components/ReservationReminder';
+import Filter from '../_components/rooms/Filter';
+import ReservationReminder from '../_components/rooms/ReservationReminder';
 
 // only applies to statically gen pages
 // export const revalidate = 3600; // refresh every hour

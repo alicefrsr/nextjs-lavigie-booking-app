@@ -70,7 +70,7 @@ function DateSelector({ settings, room, bookedDates }) {
             ) : (
               <span className='text-2xl'>${regularPrice}</span>
             )}
-            <span className=''>/night</span>
+            <span className=''>/nuit</span>
           </p>
           {numNights ? (
             <>
@@ -90,7 +90,7 @@ function DateSelector({ settings, room, bookedDates }) {
             className='border border-primary-800 rounded-sm hover:bg-accent-300 py-2 px-4 text-sm font-semibold '
             onClick={resetRange}
           >
-            Clear
+            Effacer
           </button>
         ) : null}
       </div>

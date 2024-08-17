@@ -9,31 +9,38 @@ const authConfig = {
       clientSecret: process.env.AUTH_GOOGLE_SECRET,
     }),
   ],
-  // callbacks: {
-  //   authorized({ auth, req }) {
-  //     return !!auth?.user; // return true or false
-  //   },
-  //   // create a new guest when there isn't an existing email for that user
-  //   async signIn({ user, account, profile }) {
-  //     try {
-  //       const existingGuest = await getGuest(user.email);
-  //       if (!existingGuest)
-  //         await createGuest({
-  //           email: user.email,
-  //           fullName: user.name,
-  //           // nationalID: '',
-  //           // countryFlag: '',
-  //           // nationality: '',
-  //         });
-  //       return true;
-  //     } catch (error) {
-  //       return false;
-  //     }
-  //   },
-  // },
-  // pages: {
-  //   signIn: '/login',
-  // },
+  // protected routes (/account)
+  callbacks: {
+    authorized({ auth, req }) {
+      return !!auth?.user; // return true or false
+    },
+    //   // create a new guest when there isn't an existing email for that user
+    async signIn({ user, account, profile }) {
+      try {
+        const existingGuest = await getGuest(user.email);
+        if (!existingGuest)
+          await createGuest({
+            email: user.email,
+            fullName: user.name,
+            // nationalID: '',
+            // countryFlag: '',
+            // nationality: '',
+          });
+        return true;
+      } catch (error) {
+        return false;
+      }
+    },
+    // to access session from everywhere
+    async session({ session, user }) {
+      const guest = await getGuest(session.user.email);
+      session.user.guestId = guest.id;
+      return session;
+    },
+  },
+  pages: {
+    signIn: '/login',
+  },
 };
 
 // signIn and signOut for the auth flow to happen server side (server actions)

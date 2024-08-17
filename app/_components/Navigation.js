@@ -32,18 +32,7 @@ export default async function Navigation() {
           </li>
         ))}
       </ul>
-      {session?.user?.image ? (
-        <div className=''>
-          <img
-            src={session.user.image}
-            alt={session.user.name}
-            referrerPolicy='no-referrer'
-            className='rounded-full h-8'
-          />
-        </div>
-      ) : (
-        <div></div>
-      )}
+
       {/*  {/* HAMBURGER MENU or X --justified-right */}
       <button className='sm:hidden duration-300' onClick={toggleMobileNav}>
         {openMobileNav ? (
@@ -80,6 +69,19 @@ export default async function Navigation() {
           </li>
         ))}
       </ul>
+      {/* LOGGEDIN USER GOOGLE IMG */}
+      {session?.user?.image ? (
+        <div className='pl-4'>
+          <img
+            src={session.user.image}
+            alt={session.user.name}
+            referrerPolicy='no-referrer'
+            className='rounded-full h-8'
+          />
+        </div>
+      ) : (
+        <div></div>
+      )}
     </nav>
   );
 }

@@ -5,7 +5,7 @@ import SelectCountry from '@/app/_components/account/profile/SelectCountry';
 import UpdateProfileForm from '@/app/_components/account/profile/UpdateProfileForm';
 
 export const metadata = {
-  title: 'Update profile',
+  title: 'Profil',
 };
 
 export default function Page() {

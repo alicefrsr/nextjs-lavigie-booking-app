@@ -84,12 +84,12 @@ export default async function AboutPage() {
             vous ne le remarquerez probablement pas.
           </p>
 
-          <div>
+          <div className='m-auto'>
             <a
               href='/cabins'
-              className='inline-block mt-4 bg-accent-500 px-8 py-5 text-primary-800 text-lg font-semibold hover:bg-accent-600 transition-all'
+              className='inline-block mt-4 bg-accent-400 hover:bg-accent-300 rounded-md px-8 py-6 text-primary-900 text-lg font-semibold transition-all '
             >
-              Explore our luxury cabins
+              Explorez nos chambres d'hôtes
             </a>
           </div>
         </div>

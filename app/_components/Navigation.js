@@ -3,8 +3,9 @@
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
+import { auth } from '../_lib/auth';
 
-export default function Navigation() {
+export default async function Navigation() {
   const [openMobileNav, setOpenMobileNav] = useState(false);
   const toggleMobileNav = () => {
     setOpenMobileNav(!openMobileNav);
@@ -14,6 +15,9 @@ export default function Navigation() {
     { title: 'Nos chambres', href: '/rooms' },
     { title: 'Votre compte', href: '/account' },
   ];
+
+  const session = await auth();
+  console.log(session);
 
   return (
     <nav className='z-30 text-xl flex items-center'>
@@ -28,6 +32,18 @@ export default function Navigation() {
           </li>
         ))}
       </ul>
+      {session?.user?.image ? (
+        <div className=''>
+          <img
+            src={session.user.image}
+            alt={session.user.name}
+            referrerPolicy='no-referrer'
+            className='rounded-full h-8'
+          />
+        </div>
+      ) : (
+        <div></div>
+      )}
       {/*  {/* HAMBURGER MENU or X --justified-right */}
       <button className='sm:hidden duration-300' onClick={toggleMobileNav}>
         {openMobileNav ? (

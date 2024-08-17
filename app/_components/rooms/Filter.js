@@ -53,8 +53,8 @@ export default function Filter() {
 function Button({ filter, handleFilter, activeFilter, children }) {
   return (
     <button
-      className={`px-5 py-2 hover:bg-primary-500 border-r border-primary-700 ${
-        filter === activeFilter ? 'bg-primary-600 text-primary-50' : ''
+      className={`px-5 py-2 hover:bg-primary-500 border-r last:border-none  border-primary-700 first:rounded-tl-md first:rounded-bl-md last:rounded-tr-md last:rounded-br-md  ${
+        filter === activeFilter ? 'bg-primary-900 text-primary-50 ' : ''
       }`}
       onClick={() => handleFilter(filter)}
     >

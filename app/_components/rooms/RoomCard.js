@@ -6,12 +6,12 @@ function RoomCard({ room }) {
   const { id, name, maxCapacity, regularPrice, discount, image } = room;
 
   return (
-    <div className='flex bg-primary-900 border border-primary-700   '>
+    <div className='flex bg-primary-900 border border-primary-700 rounded-md'>
       <div className='flex-1 relative'>
         <Image
           src={image}
           alt={`${name}`}
-          className='flex-1 border-r border-primary-700 object-cover'
+          className='flex-1 border-r border-primary-700 object-cover rounded-tl-md rounded-bl-md'
           fill
         />
       </div>
@@ -34,7 +34,7 @@ function RoomCard({ room }) {
               personnes
             </p>
           </div>
-          {/* LINE 4 -- PRICE */}
+          {/* LINE 3 -- PRICE */}
           <p className='flex gap-3 justify-end items-baseline'>
             {discount > 0 ? (
               <>
@@ -53,12 +53,12 @@ function RoomCard({ room }) {
         </div>
 
         {/* LOWER BOX */}
-        <div className=' border-t border-t-primary-700 text-right'>
+        <div className=' border-t border-t-primary-700 text-right '>
           <Link
             href={`/rooms/${id}`}
-            className='py-4 px-6 inline-block border-l border-l-primary-700  hover:bg-accent-400 transition-all hover:text-primary-900'
+            className='py-4 px-6 inline-block border-l border-l-primary-700  hover:bg-accent-400 transition-all hover:text-primary-900  rounded-br-md '
           >
-            Détails & reservation &rarr;
+            Détails & réservations &rarr;
           </Link>
         </div>
       </div>

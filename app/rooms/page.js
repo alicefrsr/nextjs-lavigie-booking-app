@@ -21,7 +21,7 @@ export default function Page({ searchParams }) {
   return (
     <div>
       <h2 className='text-4xl mb-5 text-accent-300 font-medium'>
-        Nos chambres luxueuses
+        Découvrez nos chambres, calmes et spacieuses.
       </h2>
       <p className=' text-lg mb-10'>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui dolore

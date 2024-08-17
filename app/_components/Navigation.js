@@ -47,8 +47,8 @@ export default function Navigation() {
       <ul
         className={
           openMobileNav // slides from the left
-            ? `mobile-nav w-[70%] left-0`
-            : `mobile-nav w-[70%] left-[-80rem]`
+            ? `mobile-nav w-[70%] left-0 sm:hidden`
+            : `mobile-nav w-[70%] left-[-80rem] sm:hidden`
         }
       >
         {navlinks.map((navlink, index) => (

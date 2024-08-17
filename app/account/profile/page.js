@@ -16,7 +16,7 @@ export default function Page() {
   return (
     <div>
       <h2 className='font-semibold text-2xl text-accent-400 mb-4'>
-        Mettex à jour votre profil
+        Mettez à jour votre profil
       </h2>
 
       <p className='text-lg mb-8 text-primary-200'>
